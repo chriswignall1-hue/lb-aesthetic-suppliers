@@ -1,0 +1,13 @@
+{
+  "name": "Wax Heater — Single Pot 500ml",
+  "description": "Professional 500ml wax heater with precise temperature control dial. Compatible with both hard wax beads and soft wax. Non-stick inner pot for easy cleaning.",
+  "category": "Waxing & Hair Removal",
+  "price": 19.99,
+  "priceTBC": true,
+  "image1": "/images/products/wax-heater.jpg",
+  "image2": "/images/products/hard-wax-beans.jpg",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "WAX-HTR-017"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Post-Wax Soothing Oil — 100ml",
+  "description": "Calming post-wax oil that removes wax residue, soothes redness, and moisturises freshly waxed skin. Infused with chamomile and azulene for instant comfort.",
+  "category": "Waxing & Hair Removal",
+  "price": 7.49,
+  "priceTBC": true,
+  "image1": "/images/products/post-wax-oil.jpg",
+  "image2": "https://images.pexels.com/photos/5797999/pexels-photo-5797999.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "WAX-PST-020"
+}

@@ -1,0 +1,73 @@
+---
+// AboutSection.astro
+---
+
+<section id="about" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Left: Luxury salon photo -->
+      <div class="relative">
+        <div class="aspect-square rounded-3xl overflow-hidden shadow-xl">
+          <img
+            src="https://images.pexels.com/photos/7750114/pexels-photo-7750114.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Luxury beauty salon interior"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl"></div>
+        </div>
+      </div>
+
+      <!-- Right: Copy -->
+      <div>
+        <p class="text-sm font-semibold text-pink-600 tracking-widest uppercase mb-3">About Us</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-6">
+          Supplying beauty professionals<br />
+          <span class="bg-brand-gradient bg-clip-text text-transparent">with confidence.</span>
+        </h2>
+
+        <!-- TODO: replace with real about copy before going live -->
+        <div class="space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            L&amp;B Aesthetic Suppliers was founded with one goal in mind: to give beauty therapists and salon owners
+            access to high-quality professional supplies at fair, transparent prices — without the hassle.
+          </p>
+          <p>
+            We know that running a treatment room means keeping on top of stock, quality, and costs all at once.
+            That's why we carry everything you need in one place — from gloves and PPE to skincare retail products,
+            waxing essentials, lash &amp; brow supplies, and sterilisation equipment.
+          </p>
+          <p>
+            Whether you're stocking up a busy salon or setting up your first treatment space, we're here to make sure
+            you have exactly what you need, when you need it.
+          </p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg,#FF6B4A20,#D4148A20)">
+              <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 text-sm">Fast Dispatch</p>
+              <p class="text-sm text-gray-500">Orders dispatched promptly</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg,#FF6B4A20,#D4148A20)">
+              <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-semibold text-gray-800 text-sm">Professional Grade</p>
+              <p class="text-sm text-gray-500">Trusted by therapists</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

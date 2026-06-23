@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ShopSection from '../components/ShopSection.astro';
+import HowToOrderSection from '../components/HowToOrderSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import OrderSidebar from '../components/OrderSidebar.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+// Load all products and sort: featured first, then alphabetical
+const allProducts = await getCollection('products');
+allProducts.sort((a, b) => {
+  if (b.data.featured && !a.data.featured) return 1;
+  if (a.data.featured && !b.data.featured) return -1;
+  return a.data.name.localeCompare(b.data.name);
+});
+
+const featuredProducts = allProducts.filter(p => p.data.featured);
+
+// Load site settings
+const settingsCollection = await getCollection('settings');
+const settings = settingsCollection[0]?.data ?? {
+  businessName: 'L&B Aesthetic Suppliers',
+  tagline: 'Premium Aesthetic Supplies for Beauty Professionals',
+  email: 'hello@lbaestheticsuppliers.com',
+  bankName: 'TODO: Add bank name',
+  bankSortCode: '00-00-00',
+  bankAccountNumber: '00000000',
+  bankAccountName: 'L&B Aesthetic Suppliers',
+  dispatchTimeframe: '3–5 working days',
+};
+---
+
+<Layout>
+  <NavBar />
+  <HeroSection featuredProducts={featuredProducts.map(p => ({ name: p.data.name, slug: p.id, image1: p.data.image1, price: p.data.price, priceTBC: p.data.priceTBC }))} />
+  <AboutSection />
+  <ShopSection products={allProducts} />
+  <HowToOrderSection />
+  <ContactSection
+    email={settings.email}
+    phone={settings.phone}
+    address={settings.address}
+  />
+  <Footer
+    email={settings.email}
+    phone={settings.phone}
+    address={settings.address}
+    instagramUrl={settings.instagramUrl}
+    facebookUrl={settings.facebookUrl}
+    tiktokUrl={settings.tiktokUrl}
+  />
+  <OrderSidebar />
+
+  <!--
+    Bank details injected onto <body> as data attributes so the
+    client-side OrderSidebar can read them for the order confirmation screen.
+    TODO: replace placeholder bank details in src/content/settings/site.json before going live
+  -->
+  <script
+    define:vars={{
+      bankName: settings.bankName,
+      bankSortCode: settings.bankSortCode,
+      bankAccountNumber: settings.bankAccountNumber,
+      bankAccountName: settings.bankAccountName,
+      dispatchTimeframe: settings.dispatchTimeframe,
+    }}
+  >
+    document.body.dataset.bankName = bankName ?? '';
+    document.body.dataset.bankSortCode = bankSortCode ?? '';
+    document.body.dataset.bankAccountNumber = bankAccountNumber ?? '';
+    document.body.dataset.bankAccountName = bankAccountName ?? '';
+    document.body.dataset.dispatchTimeframe = dispatchTimeframe ?? '';
+  </script>
+
+  <!--
+    Netlify Forms pre-render detection — these hidden forms tell
+    Netlify to register each form for processing submissions.
+    They must be rendered in the static HTML at build time.
+  -->
+  <form name="order-enquiry" data-netlify="true" style="display:none">
+    <input type="hidden" name="form-name" value="order-enquiry" />
+    <input name="customer-name" />
+    <input name="customer-email" />
+    <input name="customer-phone" />
+    <textarea name="delivery-address"></textarea>
+    <textarea name="order-notes"></textarea>
+    <input name="order-items" />
+    <input name="order-total" />
+  </form>
+
+  <form name="contact" data-netlify="true" style="display:none">
+    <input type="hidden" name="form-name" value="contact" />
+    <input name="name" />
+    <input name="email" />
+    <input name="subject" />
+    <textarea name="message"></textarea>
+  </form>
+
+  <form name="notify-me" data-netlify="true" style="display:none">
+    <input type="hidden" name="form-name" value="notify-me" />
+    <input name="email" />
+  </form>
+</Layout>

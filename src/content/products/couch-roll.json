@@ -1,0 +1,19 @@
+{
+  "name": "Couch Roll — 50m x 50cm",
+  "description": "Soft, absorbent couch roll for hygienic single-use bed coverage. Perforated for easy tearing. Gentle on skin and suitable for all treatment couch widths.",
+  "category": "Hygiene & Sterilisation",
+  "price": 7.99,
+  "priceTBC": true,
+  "image1": "/images/products/couch-roll.png",
+  "image2": "https://images.pexels.com/photos/33607393/pexels-photo-33607393.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": true,
+  "variantName": "Pack Size",
+  "variantOptions": [
+    "2 Rolls",
+    "4 Rolls",
+    "6 Rolls"
+  ],
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "HYG-CRL-030"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Brow Tint Kit",
+  "description": "Professional brow tinting kit with cream tint, developer, mixing dish, and application brushes. Provides rich, lasting colour with a natural finish.",
+  "category": "Lash & Brow",
+  "price": 16.99,
+  "priceTBC": true,
+  "image1": "/images/products/brow-tint-kit.png",
+  "image2": "https://images.pexels.com/photos/5128220/pexels-photo-5128220.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": true,
+  "variantName": "Colour",
+  "variantOptions": [
+    "Brown",
+    "Black",
+    "Dark Brown"
+  ],
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "LSH-BRT-023"
+}

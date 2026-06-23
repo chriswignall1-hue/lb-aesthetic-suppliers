@@ -1,0 +1,13 @@
+{
+  "name": "Lash Lift Kit — Full Set",
+  "description": "Complete professional lash lift kit including perming solution, neutraliser, lash shields (S/M/L), adhesive, applicator tools, and instruction guide. Everything needed for a full treatment.",
+  "category": "Lash & Brow",
+  "price": 34.99,
+  "priceTBC": true,
+  "image1": "/images/products/lash-lift-kit.jpg",
+  "image2": "https://images.pexels.com/photos/5128220/pexels-photo-5128220.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": true,
+  "sku": "LSH-LFT-021"
+}

@@ -1,0 +1,58 @@
+{
+  "$ref": "#/definitions/settings",
+  "definitions": {
+    "settings": {
+      "type": "object",
+      "properties": {
+        "businessName": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "bankName": {
+          "type": "string"
+        },
+        "bankSortCode": {
+          "type": "string"
+        },
+        "bankAccountNumber": {
+          "type": "string"
+        },
+        "bankAccountName": {
+          "type": "string"
+        },
+        "dispatchTimeframe": {
+          "type": "string"
+        },
+        "instagramUrl": {
+          "type": "string"
+        },
+        "facebookUrl": {
+          "type": "string"
+        },
+        "tiktokUrl": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "businessName",
+        "email"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

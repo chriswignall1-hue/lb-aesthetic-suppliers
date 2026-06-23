@@ -1,0 +1,13 @@
+{
+  "name": "Facial Spatula Set — Stainless Steel",
+  "description": "Professional 5-piece stainless steel spatula set for applying masks, creams, and serums hygienically. Autoclavable and reusable. A salon essential.",
+  "category": "Equipment & Tools",
+  "price": 12.99,
+  "priceTBC": true,
+  "image1": "/images/products/facial-spatula-set.jpg",
+  "image2": "https://images.pexels.com/photos/5128089/pexels-photo-5128089.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "EQP-SPA-015"
+}

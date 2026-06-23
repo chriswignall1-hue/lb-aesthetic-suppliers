@@ -1,0 +1,13 @@
+{
+  "name": "Eye Contour Cream — 15ml",
+  "description": "Targeted eye area cream that reduces puffiness, dark circles, and fine lines. Enriched with peptides and caffeine. Gentle enough for the delicate periorbital zone.",
+  "category": "Skincare & Retail",
+  "price": 24.99,
+  "priceTBC": true,
+  "image1": "/images/products/eye-contour-cream.jpg",
+  "image2": "https://images.pexels.com/photos/4841273/pexels-photo-4841273.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "Low Stock",
+  "featured": false,
+  "sku": "SKN-EYE-010"
+}

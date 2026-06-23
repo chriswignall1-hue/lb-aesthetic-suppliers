@@ -1,0 +1,88 @@
+---
+// HowToOrderSection.astro
+---
+
+<section id="how-to-order" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14">
+      <p class="text-sm font-semibold text-pink-600 tracking-widest uppercase mb-3">Simple Process</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        How to <span class="bg-brand-gradient bg-clip-text text-transparent">place an order</span>
+      </h2>
+      <p class="text-gray-500 max-w-lg mx-auto">
+        No account needed. No complicated checkout. Just browse, order, pay — and we'll dispatch.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-4 gap-8 relative">
+
+      <!-- Connecting line (desktop) -->
+      <div class="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-pink-200 to-transparent"></div>
+
+      {[
+        {
+          step: '01',
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />`,
+          title: 'Browse & Select',
+          desc: 'Shop our full range of professional aesthetic supplies. Use the category filters to find exactly what you need.',
+        },
+        {
+          step: '02',
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />`,
+          title: 'Submit Your Order',
+          desc: 'Add items to your order, fill in your delivery details, and submit. You\'ll receive a confirmation email.',
+        },
+        {
+          step: '03',
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />`,
+          title: 'Bank Transfer',
+          desc: 'Pay via bank transfer using the details provided after ordering. Use your full name as the payment reference.',
+        },
+        {
+          step: '04',
+          icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />`,
+          title: 'We Dispatch',
+          desc: 'Once payment is confirmed, we dispatch your order promptly. Estimated dispatch: 3–5 working days.', // TODO: update with real timeframe
+        },
+      ].map((s) => (
+        <div class="flex flex-col items-center text-center relative">
+          <!-- Step number circle -->
+          <div class="relative mb-5">
+            <div class="w-20 h-20 rounded-full bg-brand-gradient-soft flex items-center justify-center shadow-sm">
+              <svg class="w-8 h-8" fill="none" stroke="url(#step-grad)" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="step-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF6B4A"/>
+                    <stop offset="100%" stop-color="#D4148A"/>
+                  </linearGradient>
+                </defs>
+                <Fragment set:html={s.icon} />
+              </svg>
+            </div>
+            <span class="absolute -top-1 -right-1 w-6 h-6 rounded-full text-white text-xs font-bold flex items-center justify-center bg-brand-gradient shadow">
+              {s.step.slice(1)}
+            </span>
+          </div>
+
+          <h3 class="font-serif font-semibold text-gray-900 text-lg mb-2">{s.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-14">
+      <a
+        href="#shop"
+        class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white bg-brand-gradient shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+      >
+        Browse Products
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

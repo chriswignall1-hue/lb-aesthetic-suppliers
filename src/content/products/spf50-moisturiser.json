@@ -1,0 +1,13 @@
+{
+  "name": "SPF 50 Moisturiser — 50ml",
+  "description": "Lightweight daily moisturiser with broad-spectrum SPF 50 protection. Non-greasy formula that hydrates while protecting against UVA/UVB rays. Ideal post-treatment retail product.",
+  "category": "Skincare & Retail",
+  "price": 22.50,
+  "priceTBC": true,
+  "image1": "/images/products/spf50-moisturiser.jpg",
+  "image2": "https://images.pexels.com/photos/5798000/pexels-photo-5798000.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "SKN-SPF-007"
+}

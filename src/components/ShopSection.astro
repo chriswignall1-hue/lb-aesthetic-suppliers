@@ -1,0 +1,258 @@
+---
+// ShopSection.astro
+import ProductCard from './ProductCard.astro';
+
+interface Product {
+  id: string;
+  data: {
+    name: string;
+    description: string;
+    category: string;
+    price: number;
+    priceTBC: boolean;
+    image1?: string;
+    image2?: string;
+    hasVariants: boolean;
+    variantName?: string;
+    variantOptions?: string[];
+    stockStatus: string;
+    featured: boolean;
+    sku?: string;
+  };
+}
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+
+const categories = [
+  'All',
+  'Gloves & PPE',
+  'Skincare & Retail',
+  'Equipment & Tools',
+  'Waxing & Hair Removal',
+  'Lash & Brow',
+  'Hygiene & Sterilisation',
+];
+---
+
+<section id="shop" class="py-20 lg:py-28 bg-cream">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="text-center mb-12">
+      <p class="text-sm font-semibold text-pink-600 tracking-widest uppercase mb-3">Our Products</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        Shop the <span class="bg-brand-gradient bg-clip-text text-transparent">full range</span>
+      </h2>
+      <p class="text-gray-500 max-w-xl mx-auto">
+        Everything you need to run a professional treatment room.
+        Browse by category or view all products below.
+      </p>
+    </div>
+
+    <!-- Category filter tabs -->
+    <div class="flex flex-wrap gap-2 justify-center mb-10" id="category-filters">
+      {categories.map((cat) => (
+        <button
+          class={`filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${cat === 'All' ? 'active-filter text-white bg-brand-gradient border-transparent shadow-sm' : 'text-gray-600 bg-white border-gray-200 hover:border-pink-300 hover:text-pink-600'}`}
+          data-filter={cat}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Results count -->
+    <p class="text-sm text-gray-500 text-center mb-8" id="results-count">
+      Showing all {products.length} products
+    </p>
+
+    <!-- Product grid -->
+    <div
+      id="product-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+    >
+      {products.map((product) => (
+        <ProductCard
+          id={product.id}
+          name={product.data.name}
+          description={product.data.description}
+          category={product.data.category}
+          price={product.data.price}
+          priceTBC={product.data.priceTBC}
+          image1={product.data.image1}
+          hasVariants={product.data.hasVariants}
+          variantName={product.data.variantName}
+          variantOptions={product.data.variantOptions}
+          stockStatus={product.data.stockStatus}
+          featured={product.data.featured}
+          sku={product.data.sku}
+        />
+      ))}
+    </div>
+
+    <!-- No results message (hidden by default) -->
+    <div id="no-results" class="hidden text-center py-16">
+      <p class="text-gray-400 text-lg">No products found in this category.</p>
+    </div>
+
+    <!-- Always-visible footer message + email signup -->
+    <div class="mt-14 text-center max-w-2xl mx-auto">
+      <p class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-3">Our range is always growing.</p>
+      <p class="text-gray-500 text-base sm:text-lg mb-8 whitespace-nowrap">New products land regularly — sign up and we'll let you know when fresh stock arrives.</p>
+
+      <form
+        id="notify-form"
+        name="notify-me"
+        method="POST"
+        data-netlify="true"
+        class="flex gap-2 max-w-md mx-auto"
+      >
+        <input type="hidden" name="form-name" value="notify-me" />
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Your email address"
+          class="flex-1 px-4 py-2.5 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-400"
+        />
+        <button
+          type="submit"
+          class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-brand-gradient hover:shadow-md hover:scale-[1.02] transition-all duration-200 whitespace-nowrap"
+        >
+          Notify Me
+        </button>
+      </form>
+
+      <p id="notify-success" class="hidden text-sm font-medium text-pink-600 mt-3">
+        You're on the list! We'll be in touch when new stock arrives.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.product-card');
+  const resultsCount = document.getElementById('results-count');
+  const noResults = document.getElementById('no-results');
+  const grid = document.getElementById('product-grid');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter ?? 'All';
+
+      // Update active button styles
+      filterBtns.forEach(b => {
+        b.classList.remove('active-filter', 'text-white', 'bg-brand-gradient', 'border-transparent', 'shadow-sm');
+        b.classList.add('text-gray-600', 'bg-white', 'border-gray-200');
+      });
+      btn.classList.add('active-filter', 'text-white', 'bg-brand-gradient', 'border-transparent', 'shadow-sm');
+      btn.classList.remove('text-gray-600', 'bg-white', 'border-gray-200');
+
+      // Filter cards
+      let visible = 0;
+      cards.forEach(card => {
+        const cat = card.dataset.category ?? '';
+        const show = filter === 'All' || cat === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      if (resultsCount) {
+        resultsCount.textContent = filter === 'All'
+          ? `Showing all ${visible} products`
+          : `Showing ${visible} product${visible !== 1 ? 's' : ''} in ${filter}`;
+      }
+
+      if (noResults && grid) {
+        noResults.classList.toggle('hidden', visible > 0);
+        grid.classList.toggle('hidden', visible === 0);
+      }
+    });
+  });
+
+  // Quantity controls
+  document.querySelectorAll<HTMLButtonElement>('.qty-dec').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.productId;
+      const input = document.querySelector<HTMLInputElement>(`.qty-input[data-product-id="${id}"]`);
+      if (input) input.value = String(Math.max(1, parseInt(input.value) - 1));
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.qty-inc').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.productId;
+      const input = document.querySelector<HTMLInputElement>(`.qty-input[data-product-id="${id}"]`);
+      if (input) input.value = String(parseInt(input.value) + 1);
+    });
+  });
+
+  // Add to order
+  document.querySelectorAll<HTMLButtonElement>('.add-to-order').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.productId ?? '';
+      const name = btn.dataset.productName ?? '';
+      const price = parseFloat(btn.dataset.productPrice ?? '0');
+      const category = btn.dataset.productCategory ?? '';
+      const hasVariants = btn.dataset.hasVariants === 'true';
+      const variantName = btn.dataset.variantName ?? '';
+
+      const qtyInput = document.querySelector<HTMLInputElement>(`.qty-input[data-product-id="${id}"]`);
+      const qty = parseInt(qtyInput?.value ?? '1');
+
+      let variant = '';
+      if (hasVariants) {
+        const sel = document.querySelector<HTMLSelectElement>(`.variant-select[data-product-id="${id}"]`);
+        variant = sel?.value ?? '';
+        if (!variant) {
+          sel?.focus();
+          sel?.classList.add('ring-2', 'ring-red-400', 'border-red-400');
+          // Show inline error message
+          const card = btn.closest('.product-card');
+          const existing = card?.querySelector('.variant-error');
+          if (!existing) {
+            const err = document.createElement('p');
+            err.className = 'variant-error text-xs text-red-500 mt-1 font-medium';
+            err.textContent = `Please choose a ${variantName || 'option'} first`;
+            sel?.parentElement?.appendChild(err);
+            setTimeout(() => {
+              err.remove();
+              sel?.classList.remove('ring-2', 'ring-red-400', 'border-red-400');
+            }, 2500);
+          }
+          return;
+        }
+      }
+
+      // Dispatch custom event — picked up by OrderSidebar
+      window.dispatchEvent(new CustomEvent('add-to-order', {
+        detail: { id, name, price, category, qty, variant, variantName }
+      }));
+
+      // Button feedback
+      const orig = btn.textContent;
+      btn.textContent = 'Added!';
+      btn.classList.add('opacity-75');
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.remove('opacity-75');
+      }, 1200);
+    });
+  });
+
+  // Notify-me email signup
+  const notifyForm = document.getElementById('notify-form') as HTMLFormElement | null;
+  const notifySuccess = document.getElementById('notify-success');
+  notifyForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(notifyForm);
+    await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data as any).toString() });
+    notifyForm.style.display = 'none';
+    notifySuccess?.classList.remove('hidden');
+  });
+</script>

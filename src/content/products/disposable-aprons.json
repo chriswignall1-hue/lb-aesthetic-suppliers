@@ -1,0 +1,13 @@
+{
+  "name": "Disposable Aprons — Pack of 100",
+  "description": "Lightweight disposable PE aprons providing full-front protection. Essential PPE for any treatment room. Easy to don and dispose of between clients.",
+  "category": "Gloves & PPE",
+  "price": 8.49,
+  "priceTBC": true,
+  "image1": "/images/products/disposable-aprons.png",
+  "image2": "https://images.pexels.com/photos/4197564/pexels-photo-4197564.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "PPE-APR-004"
+}

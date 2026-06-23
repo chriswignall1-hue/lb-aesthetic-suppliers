@@ -1,0 +1,13 @@
+{
+  "name": "Magnifying Lamp — LED Ring (Desk Mount)",
+  "description": "5-dioptre LED magnifying lamp with adjustable arm. Provides bright, shadow-free illumination for precise treatment work. Energy-efficient LEDs with a long lifespan.",
+  "category": "Equipment & Tools",
+  "price": 54.99,
+  "priceTBC": true,
+  "image1": "/images/products/magnifying-lamp.jpg",
+  "image2": "https://images.pexels.com/photos/13068377/pexels-photo-13068377.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "EQP-LMP-012"
+}

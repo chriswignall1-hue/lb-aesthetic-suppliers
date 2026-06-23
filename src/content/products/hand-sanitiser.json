@@ -1,0 +1,13 @@
+{
+  "name": "Hand Sanitiser Gel — 500ml",
+  "description": "70% alcohol hand sanitiser gel with added moisturisers to prevent skin drying. Fast-drying, fragrance-free formula. Pump dispenser for hygienic one-handed use.",
+  "category": "Hygiene & Sterilisation",
+  "price": 5.49,
+  "priceTBC": true,
+  "image1": "/images/products/hand-sanitiser.jpg",
+  "image2": "https://images.pexels.com/photos/5841951/pexels-photo-5841951.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "HYG-HSG-029"
+}

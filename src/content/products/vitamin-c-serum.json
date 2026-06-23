@@ -1,0 +1,13 @@
+{
+  "name": "Vitamin C Brightening Serum — 30ml",
+  "description": "Potent vitamin C serum that visibly brightens skin tone, fades dark spots, and boosts collagen production. Stable formula for maximum efficacy and long shelf life.",
+  "category": "Skincare & Retail",
+  "price": 21.99,
+  "priceTBC": true,
+  "image1": "/images/products/vitamin-c-serum.jpg",
+  "image2": "https://images.pexels.com/photos/35899861/pexels-photo-35899861.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "SKN-VIT-008"
+}

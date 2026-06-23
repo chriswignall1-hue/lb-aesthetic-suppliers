@@ -1,0 +1,13 @@
+{
+  "name": "Autoclave Sterilisation Pouches — Pack of 200",
+  "description": "Self-sealing sterilisation pouches with integrated colour-change indicators. Compatible with all standard autoclave sterilisers. Available in mixed size pack.",
+  "category": "Hygiene & Sterilisation",
+  "price": 9.99,
+  "priceTBC": true,
+  "image1": "/images/products/autoclave-pouches.jpg",
+  "image2": "https://images.pexels.com/photos/3259579/pexels-photo-3259579.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "HYG-ACP-028"
+}

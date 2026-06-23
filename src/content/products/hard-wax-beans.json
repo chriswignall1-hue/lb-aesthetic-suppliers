@@ -1,0 +1,21 @@
+{
+  "name": "Hard Wax Beans — 500g",
+  "description": "Premium low-melt hard wax pellets for all body areas. Grips short hair effectively while being gentle on skin. No strips needed — simply peel off once set.",
+  "category": "Waxing & Hair Removal",
+  "price": 11.99,
+  "priceTBC": true,
+  "image1": "/images/products/hard-wax-beans.jpg",
+  "image2": "https://images.pexels.com/photos/35103884/pexels-photo-35103884.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": true,
+  "variantName": "Scent",
+  "variantOptions": [
+    "Lavender",
+    "Chocolate",
+    "Honey",
+    "Rose",
+    "Unscented"
+  ],
+  "stockStatus": "In Stock",
+  "featured": true,
+  "sku": "WAX-HWB-016"
+}

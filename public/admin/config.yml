@@ -1,0 +1,194 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images/products
+public_folder: /images/products
+
+# Netlify Identity authentication
+local_backend: false
+
+collections:
+
+  # ─── PRODUCTS ───────────────────────────────────────────────────────────────
+  - name: products
+    label: Products
+    label_singular: Product
+    folder: src/content/products
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} — {{category}} — £{{price}}"
+    fields:
+      - label: Product Name
+        name: name
+        widget: string
+        hint: "The full product name as it will appear on the website and in orders."
+
+      - label: Description
+        name: description
+        widget: text
+        hint: "A clear, professional product description. Keep it concise — 1–3 sentences work well."
+
+      - label: Category
+        name: category
+        widget: select
+        hint: "Choose the category this product belongs to. Used to filter products in the shop."
+        options:
+          - Gloves & PPE
+          - Skincare & Retail
+          - Equipment & Tools
+          - Waxing & Hair Removal
+          - Lash & Brow
+          - Hygiene & Sterilisation
+
+      - label: Price (£)
+        name: price
+        widget: number
+        value_type: float
+        min: 0
+        hint: "Enter the price in pounds, e.g. 9.99. This will display as £9.99 on the site."
+
+      - label: Price is TBC (placeholder)
+        name: priceTBC
+        widget: boolean
+        default: true
+        hint: "Tick this if the price is not yet confirmed. A 'Price TBC' badge will show on the product."
+
+      - label: Product Image 1
+        name: image1
+        widget: image
+        required: false
+        hint: "Main product photo. Use a clean, well-lit image on a white or neutral background."
+
+      - label: Product Image 2
+        name: image2
+        widget: image
+        required: false
+        hint: "Second product photo, e.g. a different angle or lifestyle shot."
+
+      - label: Has Variants?
+        name: hasVariants
+        widget: boolean
+        default: false
+        hint: "Turn on if this product comes in different sizes, colours, or options."
+
+      - label: Variant Name
+        name: variantName
+        widget: string
+        required: false
+        hint: "What the variants are called, e.g. 'Size', 'Colour', 'Scent'. Only needed if Has Variants is on."
+
+      - label: Variant Options
+        name: variantOptions
+        widget: list
+        required: false
+        hint: "List each variant option on a separate line, e.g. S, M, L, XL. Only needed if Has Variants is on."
+
+      - label: Stock Status
+        name: stockStatus
+        widget: select
+        default: In Stock
+        hint: "Current availability of this product."
+        options:
+          - In Stock
+          - Low Stock
+          - Out of Stock
+
+      - label: Featured Product
+        name: featured
+        widget: boolean
+        default: false
+        hint: "Featured products are highlighted in the shop grid and may appear in the homepage hero section."
+
+      - label: SKU / Product Code
+        name: sku
+        widget: string
+        required: false
+        hint: "Optional internal product code for your own reference. Not shown to customers."
+
+  # ─── SITE SETTINGS ──────────────────────────────────────────────────────────
+  - name: settings
+    label: Site Settings
+    files:
+      - label: Business & Contact Details
+        name: site
+        file: src/content/settings/site.json
+        fields:
+          - label: Business Name
+            name: businessName
+            widget: string
+            hint: "Your business name as it appears throughout the site."
+
+          - label: Tagline
+            name: tagline
+            widget: string
+            required: false
+            hint: "Short strapline shown below the business name in the hero section."
+
+          - label: Contact Email
+            name: email
+            widget: string
+            hint: "Public enquiry email address shown in the contact section."
+
+          - label: Phone Number
+            name: phone
+            widget: string
+            required: false
+            hint: "Phone number shown in the footer. Leave blank to hide."
+
+          - label: Business Address
+            name: address
+            widget: text
+            required: false
+            hint: "Full business address for the footer. Use line breaks to format."
+
+          - label: Bank Name
+            name: bankName
+            widget: string
+            required: false
+            hint: "Your bank's name shown to customers after they place an order, e.g. Barclays."
+
+          - label: Sort Code
+            name: bankSortCode
+            widget: string
+            required: false
+            hint: "Your bank sort code in the format 00-00-00. Shown to customers for payment."
+
+          - label: Account Number
+            name: bankAccountNumber
+            widget: string
+            required: false
+            hint: "Your 8-digit bank account number. Shown to customers for payment."
+
+          - label: Account Name
+            name: bankAccountName
+            widget: string
+            required: false
+            hint: "The name on the bank account customers should pay to."
+
+          - label: Estimated Dispatch Timeframe
+            name: dispatchTimeframe
+            widget: string
+            required: false
+            hint: "Shown to customers after ordering, e.g. '3–5 working days'."
+
+          - label: Instagram URL
+            name: instagramUrl
+            widget: string
+            required: false
+            hint: "Full URL to your Instagram profile. Leave blank to hide the icon."
+
+          - label: Facebook URL
+            name: facebookUrl
+            widget: string
+            required: false
+            hint: "Full URL to your Facebook page. Leave blank to hide the icon."
+
+          - label: TikTok URL
+            name: tiktokUrl
+            widget: string
+            required: false
+            hint: "Full URL to your TikTok profile. Leave blank to hide the icon."

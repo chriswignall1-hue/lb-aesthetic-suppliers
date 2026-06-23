@@ -1,0 +1,13 @@
+{
+  "name": "Towel Warmer Cabinet",
+  "description": "Professional UV sterilisation and towel warming cabinet. Keeps towels and linens warm and hygienic ready for client use. Dual compartment design with UV lamp.",
+  "category": "Equipment & Tools",
+  "price": 89.99,
+  "priceTBC": true,
+  "image1": "/images/products/towel-warmer.png",
+  "image2": "https://images.pexels.com/photos/13068377/pexels-photo-13068377.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "EQP-TWR-014"
+}

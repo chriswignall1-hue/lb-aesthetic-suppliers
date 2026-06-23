@@ -1,0 +1,110 @@
+---
+// NavBar.astro — sticky top navigation
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 md:h-24">
+
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img
+          src="/lbaestheticsuppliers-logo.jpg"
+          alt="L&B Aesthetic Suppliers"
+          class="h-14 md:h-16 w-auto object-contain"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        />
+        <!-- Fallback text logo if image not found -->
+        <span
+          class="hidden items-center font-serif font-bold text-xl bg-brand-gradient bg-clip-text text-transparent"
+          style="display:none"
+        >
+          L&amp;B Aesthetic
+        </span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors">About</a>
+        <a href="#shop" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors">Shop</a>
+        <a href="#how-to-order" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors">How to Order</a>
+        <a href="#contact" class="text-sm font-medium text-gray-600 hover:text-pink-600 transition-colors">Contact</a>
+        <a
+          href="#shop"
+          class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-brand-gradient shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200"
+        >
+          Shop Now
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <nav class="flex flex-col px-4 py-4 gap-1">
+      <a href="#about" class="py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-cream transition-colors mobile-nav-link">About</a>
+      <a href="#shop" class="py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-cream transition-colors mobile-nav-link">Shop</a>
+      <a href="#how-to-order" class="py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-cream transition-colors mobile-nav-link">How to Order</a>
+      <a href="#contact" class="py-3 px-4 rounded-lg text-gray-700 font-medium hover:bg-cream transition-colors mobile-nav-link">Contact</a>
+      <a
+        href="#shop"
+        class="mt-2 py-3 px-4 rounded-full text-center font-semibold text-white bg-brand-gradient mobile-nav-link"
+      >
+        Shop Now
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- Spacer so content isn't hidden behind fixed nav -->
+<div class="h-20 md:h-24"></div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-open');
+  const closeIcon = document.getElementById('menu-close');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden', isOpen);
+    openIcon?.classList.toggle('hidden', !isOpen);
+    closeIcon?.classList.toggle('hidden', isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      openIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+
+  // Add shadow to navbar on scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+      navbar.classList.toggle('shadow-md', window.scrollY > 10);
+    }
+  });
+</script>

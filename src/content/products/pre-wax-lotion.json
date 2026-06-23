@@ -1,0 +1,13 @@
+{
+  "name": "Pre-Wax Cleansing Lotion — 500ml",
+  "description": "Gentle pre-wax skin prep lotion that cleanses the skin, removes oils and product residue, and improves wax adhesion. Leaves skin dry and ready for waxing.",
+  "category": "Waxing & Hair Removal",
+  "price": 8.99,
+  "priceTBC": true,
+  "image1": "/images/products/pre-wax-lotion.jpg",
+  "image2": "https://images.pexels.com/photos/6724480/pexels-photo-6724480.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "WAX-PRE-019"
+}

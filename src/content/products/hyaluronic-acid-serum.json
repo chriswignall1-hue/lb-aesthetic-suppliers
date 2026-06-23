@@ -1,0 +1,13 @@
+{
+  "name": "Hyaluronic Acid Serum — 30ml",
+  "description": "Intensive hydrating serum with multi-molecular hyaluronic acid that attracts moisture at every skin level. Plumps fine lines and leaves skin dewy and radiant. Perfect for retail.",
+  "category": "Skincare & Retail",
+  "price": 18.99,
+  "priceTBC": true,
+  "image1": "/images/products/hyaluronic-acid-serum.png",
+  "image2": "https://images.pexels.com/photos/35899861/pexels-photo-35899861.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": true,
+  "sku": "SKN-HYA-006"
+}

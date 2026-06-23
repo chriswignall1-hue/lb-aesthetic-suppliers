@@ -1,0 +1,20 @@
+{
+  "name": "Nitrile Gloves — Box of 100",
+  "description": "Professional-grade powder-free nitrile gloves. Latex-free, offering excellent protection and tactile sensitivity for aesthetic treatments. Suitable for all skin types.",
+  "category": "Gloves & PPE",
+  "price": 9.99,
+  "priceTBC": true,
+  "image1": "https://images.pexels.com/photos/7856715/pexels-photo-7856715.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "image2": "https://images.pexels.com/photos/4021259/pexels-photo-4021259.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": true,
+  "variantName": "Size",
+  "variantOptions": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "stockStatus": "In Stock",
+  "featured": true,
+  "sku": "PPE-NIT-001"
+}

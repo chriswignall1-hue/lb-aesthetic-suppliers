@@ -1,0 +1,13 @@
+{
+  "name": "Barbicide Concentrate — 1 Litre",
+  "description": "Industry-standard hospital-grade disinfectant concentrate for tools and implements. Dilutes to make up to 16 litres of solution. Virucidal, bactericidal, and fungicidal.",
+  "category": "Hygiene & Sterilisation",
+  "price": 14.99,
+  "priceTBC": true,
+  "image1": "/images/products/barbicide-concentrate.webp",
+  "image2": "https://images.pexels.com/photos/3259579/pexels-photo-3259579.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "HYG-BAR-027"
+}

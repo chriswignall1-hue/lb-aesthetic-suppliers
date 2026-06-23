@@ -1,0 +1,13 @@
+{
+  "name": "Facial Steamer with Ozone",
+  "description": "Professional facial steamer with ozone function to open pores, soften skin, and enhance product absorption. Adjustable steam output and 360° rotating nozzle. Ideal for facial treatments.",
+  "category": "Equipment & Tools",
+  "price": 79.99,
+  "priceTBC": true,
+  "image1": "/images/products/facial-steamer.avif",
+  "image2": "https://images.pexels.com/photos/33607393/pexels-photo-33607393.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": true,
+  "sku": "EQP-STM-011"
+}

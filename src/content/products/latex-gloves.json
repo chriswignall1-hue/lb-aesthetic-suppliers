@@ -1,0 +1,20 @@
+{
+  "name": "Latex Gloves — Box of 100",
+  "description": "Natural latex examination gloves offering superior fit and feel. Ideal for beauty and aesthetic professionals requiring a close fit during treatments.",
+  "category": "Gloves & PPE",
+  "price": 7.99,
+  "priceTBC": true,
+  "image1": "https://images.pexels.com/photos/4021259/pexels-photo-4021259.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "image2": "https://images.pexels.com/photos/7856715/pexels-photo-7856715.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": true,
+  "variantName": "Size",
+  "variantOptions": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "PPE-LAT-002"
+}

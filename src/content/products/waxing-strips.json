@@ -1,0 +1,13 @@
+{
+  "name": "Waxing Strips — Pack of 100",
+  "description": "Non-woven fabric waxing strips for use with soft strip wax. Tear-resistant and lint-free for smooth, clean removal. Suitable for legs, arms, and body areas.",
+  "category": "Waxing & Hair Removal",
+  "price": 4.99,
+  "priceTBC": true,
+  "image1": "/images/products/waxing-strips.jpg",
+  "image2": "/images/products/hard-wax-beans.jpg",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "WAX-STR-018"
+}

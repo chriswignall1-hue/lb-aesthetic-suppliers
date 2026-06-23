@@ -1,0 +1,13 @@
+{
+  "name": "Beauty Trolley — 3 Tier",
+  "description": "Sturdy 3-tier beauty trolley on smooth-rolling casters. Ample storage for tools, products, and supplies. Easy-clean surface and adjustable shelf heights.",
+  "category": "Equipment & Tools",
+  "price": 64.99,
+  "priceTBC": true,
+  "image1": "/images/products/beauty-trolley.png",
+  "image2": "https://images.pexels.com/photos/13068377/pexels-photo-13068377.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "EQP-TRL-013"
+}

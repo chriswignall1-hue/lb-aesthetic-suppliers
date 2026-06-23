@@ -1,0 +1,13 @@
+{
+  "name": "Surface Disinfectant Spray — 500ml",
+  "description": "Fast-acting broad-spectrum surface disinfectant spray. Kills 99.999% of bacteria, viruses, and fungi. Ready-to-use formula — no dilution required. Essential for treatment rooms.",
+  "category": "Hygiene & Sterilisation",
+  "price": 6.99,
+  "priceTBC": true,
+  "image1": "/images/products/surface-disinfectant.jpg",
+  "image2": "https://images.pexels.com/photos/5841951/pexels-photo-5841951.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "HYG-SDS-026"
+}

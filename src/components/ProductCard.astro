@@ -1,0 +1,147 @@
+---
+// ProductCard.astro
+export interface Props {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  price: number;
+  priceTBC: boolean;
+  image1?: string;
+  hasVariants: boolean;
+  variantName?: string;
+  variantOptions?: string[];
+  stockStatus: string;
+  featured: boolean;
+  sku?: string;
+}
+
+const {
+  id,
+  name,
+  description,
+  category,
+  price,
+  priceTBC,
+  image1,
+  hasVariants,
+  variantName,
+  variantOptions,
+  stockStatus,
+  featured,
+  sku,
+} = Astro.props;
+
+const stockColour = {
+  'In Stock': 'text-green-600 bg-green-50',
+  'Low Stock': 'text-amber-600 bg-amber-50',
+  'Out of Stock': 'text-red-500 bg-red-50',
+}[stockStatus] ?? 'text-gray-500 bg-gray-100';
+---
+
+<div
+  class={`product-card group relative bg-white rounded-2xl border overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${featured ? 'border-pink-200 shadow-md' : 'border-gray-100 shadow-sm'}`}
+  data-product-id={id}
+  data-category={category}
+>
+  <!-- Featured badge -->
+  {featured && (
+    <div class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-xs font-semibold text-white bg-brand-gradient shadow-sm">
+      Featured
+    </div>
+  )}
+
+  <!-- Stock status badge -->
+  <div class={`absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full text-xs font-medium ${stockColour}`}>
+    {stockStatus}
+  </div>
+
+  <!-- Product image -->
+  <div class="aspect-square bg-cream-dark overflow-hidden">
+    <img
+      src={image1 || '/images/products/placeholder-gloves.svg'}
+      alt={name}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Card body -->
+  <div class="flex flex-col flex-1 p-5">
+    <!-- Category tag -->
+    <span class="text-xs font-semibold text-pink-500 uppercase tracking-wide mb-1">{category}</span>
+
+    <!-- Product name -->
+    <h3 class="font-serif font-semibold text-gray-900 text-base leading-snug mb-2">{name}</h3>
+
+    <!-- Description -->
+    <p class="text-sm text-gray-500 leading-relaxed line-clamp-3 flex-1">{description}</p>
+
+    <!-- Price -->
+    <div class="mt-4 flex items-baseline gap-2">
+      <span class="text-xl font-bold text-gray-900">
+        £{price.toFixed(2)}
+      </span>
+    </div>
+
+    <!-- Variant selector -->
+    {hasVariants && variantOptions && variantOptions.length > 0 && (
+      <div class="mt-3">
+        <label
+          class="block text-xs font-medium text-gray-600 mb-1"
+          for={`variant-${id}`}
+        >
+          {variantName}:
+        </label>
+        <select
+          id={`variant-${id}`}
+          class="variant-select w-full text-sm border border-gray-200 rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-400"
+          data-product-id={id}
+        >
+          <option value="">— Choose {variantName} —</option>
+          {variantOptions.map(opt => (
+            <option value={opt}>{opt}</option>
+          ))}
+        </select>
+      </div>
+    )}
+
+    <!-- Quantity & Add to Order -->
+    <div class="mt-4 flex gap-2 items-center">
+      <div class="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+        <button
+          class="qty-dec px-3 py-2 text-gray-600 hover:bg-gray-100 transition-colors text-lg leading-none"
+          data-product-id={id}
+          aria-label="Decrease quantity"
+        >−</button>
+        <input
+          type="number"
+          min="1"
+          value="1"
+          class="qty-input w-10 text-center text-sm font-medium border-x border-gray-200 py-2 focus:outline-none"
+          data-product-id={id}
+          aria-label="Quantity"
+        />
+        <button
+          class="qty-inc px-3 py-2 text-gray-600 hover:bg-gray-100 transition-colors text-lg leading-none"
+          data-product-id={id}
+          aria-label="Increase quantity"
+        >+</button>
+      </div>
+
+      <button
+        class={`add-to-order flex-1 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-200 ${stockStatus === 'Out of Stock' ? 'bg-gray-100 text-gray-400 cursor-not-allowed' : 'text-white bg-brand-gradient hover:shadow-md hover:scale-[1.02]'}`}
+        data-product-id={id}
+        data-product-name={name}
+        data-product-price={price}
+        data-product-category={category}
+        data-has-variants={hasVariants ? "true" : "false"}
+        data-variant-name={variantName}
+        disabled={stockStatus === 'Out of Stock'}
+        aria-label={`Add ${name} to order`}
+      >
+        {stockStatus === 'Out of Stock' ? 'Out of Stock' : 'Add to Order'}
+      </button>
+    </div>
+  </div>
+</div>

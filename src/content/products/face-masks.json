@@ -1,0 +1,13 @@
+{
+  "name": "Face Masks — Pack of 50",
+  "description": "Type IIR surgical-grade face masks providing effective barrier protection. Individually wrapped, breathable, with adjustable nose wire for a comfortable secure fit.",
+  "category": "Gloves & PPE",
+  "price": 5.99,
+  "priceTBC": true,
+  "image1": "https://images.pexels.com/photos/4197564/pexels-photo-4197564.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "image2": "https://images.pexels.com/photos/7856715/pexels-photo-7856715.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "PPE-MSK-005"
+}

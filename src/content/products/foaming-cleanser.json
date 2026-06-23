@@ -1,0 +1,13 @@
+{
+  "name": "Gentle Foaming Cleanser — 150ml",
+  "description": "Mild foaming cleanser that removes makeup, impurities, and excess oil without disrupting the skin's natural moisture barrier. Suitable for all skin types including sensitive skin.",
+  "category": "Skincare & Retail",
+  "price": 14.99,
+  "priceTBC": true,
+  "image1": "/images/products/foaming-cleanser.jpg",
+  "image2": "https://images.pexels.com/photos/5797999/pexels-photo-5797999.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "hasVariants": false,
+  "stockStatus": "In Stock",
+  "featured": false,
+  "sku": "SKN-CLN-009"
+}

@@ -1,0 +1,80 @@
+{
+  "$ref": "#/definitions/products",
+  "definitions": {
+    "products": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "Gloves & PPE",
+            "Skincare & Retail",
+            "Equipment & Tools",
+            "Waxing & Hair Removal",
+            "Lash & Brow",
+            "Hygiene & Sterilisation"
+          ]
+        },
+        "price": {
+          "type": "number"
+        },
+        "priceTBC": {
+          "type": "boolean",
+          "default": true
+        },
+        "image1": {
+          "type": "string"
+        },
+        "image2": {
+          "type": "string"
+        },
+        "hasVariants": {
+          "type": "boolean",
+          "default": false
+        },
+        "variantName": {
+          "type": "string"
+        },
+        "variantOptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stockStatus": {
+          "type": "string",
+          "enum": [
+            "In Stock",
+            "Out of Stock",
+            "Low Stock"
+          ],
+          "default": "In Stock"
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "sku": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "category",
+        "price"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
