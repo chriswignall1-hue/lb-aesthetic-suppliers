@@ -5,7 +5,7 @@
   "price": 64.99,
   "priceTBC": true,
   "image1": "/images/products/beauty-trolley.png",
-  "image2": "https://images.pexels.com/photos/13068377/pexels-photo-13068377.jpeg?auto=compress&cs=tinysrgb&w=800",
+  "image2": "/images/products/beauty-trolley-2.png",
   "hasVariants": false,
   "stockStatus": "In Stock",
   "featured": false,
